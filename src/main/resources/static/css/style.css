@@ -1,0 +1,63 @@
+/* Grundläggande styling för hela sidan */
+body {
+    background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Centrerad container */
+body {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Rubrik */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 15px;
+}
+
+/* Lista */
+ul {
+    list-style: none;
+    padding: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Listobjekt */
+li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+}
+
+/* Sista objektet ska inte ha border */
+li:last-child {
+    border-bottom: none;
+}
+
+/* Hover-effekt */
+li:hover {
+    background-color: #ecf0f1;
+    cursor: pointer;
+}
+
+/* Varannan rad i annan färg (zebra-striping) */
+li:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+li:nth-child(even):hover {
+    background-color: #e8ebed;
+}

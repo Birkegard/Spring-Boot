@@ -6,21 +6,25 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import se.iths.christoffer.springboot.model.Product;
+import se.iths.christoffer.springboot.service.ProductService;
 
 import java.util.List;
+
 
 @Controller
 @RequestMapping("/products")
 public class ProductController {
 
+    private final ProductService productService;
+
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
+
+
     @GetMapping
     public String getProducts(Model model) {
-        List<Product> productList = List.of(
-                new Product(1, "PS5", 5999, "Electronic"),
-                new Product(2, "Gitarr", 25000, "Instrument"),
-                new Product(3, "Volvo", 199000, "Car")
-        );
-
+        List<Product> productList = productService.getProducts();
         model.addAttribute("product", productList);
         return "product";
     }
